@@ -1,0 +1,166 @@
+{
+  "_version": "1.84.0",
+  "sap.app": {
+    "id": "sap.ui.demo.orderbrowser",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/IWBEP/EPM_DEVELOPER_SCENARIO_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    },
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.24.0",
+      "toolsId": "8e2f528e-6be0-4168-8641-f5a1ec139561"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "browseorders-display": {
+          "semanticObject": "browseorders",
+          "action": "display",
+          "title": "{{browseorders-display.flpTitle}}",
+          "subTitle": "{{browseorders-display.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.148.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ui.demo.orderbrowser.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "controlAggregation": "beginColumnPages",
+        "controlId": "layout",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sap.ui.demo.orderbrowser.view",
+        "async": true,
+        "viewPath": "sap.ui.demo.orderbrowser.view",
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": "master"
+        },
+        {
+          "pattern": "Orders/{objectId}/:?query:",
+          "name": "object",
+          "target": [
+            "master",
+            "object"
+          ]
+        }
+      ],
+      "targets": {
+        "master": {
+          "name": "Master",
+          "level": 1,
+          "id": "master"
+        },
+        "object": {
+          "name": "Detail",
+          "id": "detail",
+          "level": 1,
+          "controlAggregation": "midColumnPages"
+        },
+        "detailObjectNotFound": {
+          "name": "DetailObjectNotFound",
+          "id": "detailObjectNotFound",
+          "controlAggregation": "midColumnPages"
+        },
+        "notFound": {
+          "name": "NotFound",
+          "id": "notFound"
+        },
+        "shipping": {
+          "name": "Shipping",
+          "parent": "object",
+          "controlId": "iconTabFilterShipping",
+          "controlAggregation": "content"
+        },
+        "processor": {
+          "name": "Processor",
+          "parent": "object",
+          "controlId": "iconTabFilterProcessor",
+          "controlAggregation": "content"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.ui.demo.orderbrowser.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapuidemoorderbrowser"
+  }
+}
