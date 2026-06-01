@@ -28,9 +28,9 @@ module.exports = function(config) {
       ]
     },
 
-    // files: [
-    //   { pattern: 'webapp/**', served: true, included: false, watched: true }
-    // ],
+    files: [
+      { pattern: 'webapp/**', served: true, included: false, watched: true }
+    ],
 
     preprocessors: {
       // Only instrument source code — NOT test files — for accurate coverage
