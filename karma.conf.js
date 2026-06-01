@@ -29,7 +29,7 @@ module.exports = function(config) {
     },
 
     files: [
-      { pattern: 'webapp/**', served: true, included: false, watched: true }
+     { pattern: 'webapp/**/*', served: true, included: false, watched: false }
     ],
 
     preprocessors: {
@@ -88,10 +88,10 @@ module.exports = function(config) {
       }
     },
 
-    captureTimeout: 210000,
-    browserDisconnectTimeout: 210000,
+    browserDisconnectTimeout: 300000,
+    browserNoActivityTimeout: 300000,
+    captureTimeout: 300000,
     browserDisconnectTolerance: 3,
-    browserNoActivityTimeout: 210000,
 
     plugins: [
       'karma-ui5',
