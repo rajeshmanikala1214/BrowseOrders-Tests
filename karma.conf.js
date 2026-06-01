@@ -19,7 +19,7 @@ module.exports = function(config) {
       config: {
         async: true,
         resourceRoots: {
-          "sap.suite.ui.commons.demo.tutorial": "/base/webapp"
+          "sap.ui.demo.orderbrowser": "/base/webapp"
         }
       },
       tests: [
