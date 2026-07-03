@@ -50,10 +50,10 @@ module.exports = function(config) {
     },
 
     junitReporter: {
-      outputDir: 'reports',
-      outputFile: 'reports/test-execution.xml',
-      useBrowserName: false,
-      suite: 'KarmaTests'
+    outputDir: 'reports',
+    outputFile: 'test-execution.xml',
+    useBrowserName: false,
+    suite: 'KarmaTests'
     },
     
     port: 9876,
