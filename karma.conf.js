@@ -14,13 +14,13 @@ module.exports = function(config) {
     frameworks: ['ui5', 'qunit'],
 
     ui5: {
-      url: "https://sapui5.hana.ondemand.com",   // resolves to the hosted LTS patch (1.120.47 today)
-      mode: "script",
-      config: { async: true, resourceRoots: { "sap.ui.demo.orderbrowser": "/base/webapp" } },
-      tests: [
-       "sap/ui/demo/orderbrowser/test/unit/AllTests",
-      "sap/ui/demo/orderbrowser/test/integration/AllJourneys"
-       ]
+     url: "https://sapui5.hana.ondemand.com/1.120.47",
+     mode: "script",
+     config: { async: true, resourceRoots: { "sap.ui.demo.orderbrowser": "/base/webapp" } },
+     tests: [
+    "sap/ui/demo/orderbrowser/test/unit/AllTests",
+    "sap/ui/demo/orderbrowser/test/integration/AllJourneys"
+    ]
     },
 
     files: [
