@@ -67,7 +67,7 @@ module.exports = function(config) {
     // For Local --> Headless Browser => browsers: ['ChromeHeadless'],
     // For Local --> With Browser => browsers: ['Chrome'],
 
-    browsers: ['ChromeHeadless'],
+    browsers: ['SeleniumChrome'],
 
     customLaunchers: {
       SeleniumChrome: {
