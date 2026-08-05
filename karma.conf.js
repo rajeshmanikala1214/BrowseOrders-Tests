@@ -14,7 +14,7 @@ module.exports = function(config) {
     frameworks: ['ui5', 'qunit'],
 
     ui5: {
-     url: "https://sapui5.hana.ondemand.com/1.120.47",
+     url: "https://sapui5.hana.ondemand.com/1.140.0/resources/sap-ui-core.js",
      mode: "script",
      config: { async: true, resourceRoots: { "sap.ui.demo.orderbrowser": "/base/webapp" } },
      tests: [
@@ -67,7 +67,7 @@ module.exports = function(config) {
     // For Local --> Headless Browser => browsers: ['ChromeHeadless'],
     // For Local --> With Browser => browsers: ['Chrome'],
 
-    browsers: ['SeleniumChrome'],
+    browsers: ['ChromeHeadless'],
 
     customLaunchers: {
       SeleniumChrome: {
