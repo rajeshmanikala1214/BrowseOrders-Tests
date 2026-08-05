@@ -14,7 +14,7 @@ module.exports = function(config) {
     frameworks: ['ui5', 'qunit'],
 
     ui5: {
-     url: "https://sapui5.hana.ondemand.com/1.140.0/resources/sap-ui-core.js",
+     url: "https://sapui5.hana.ondemand.com/1.140.0",
      mode: "script",
      config: { async: true, resourceRoots: { "sap.ui.demo.orderbrowser": "/base/webapp" } },
      tests: [
